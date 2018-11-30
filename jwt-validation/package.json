@@ -1,0 +1,33 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "A light foundation for your next frontend project based on webpack.",
+  "scripts": {
+    "build": "webpack -p --progress --colors",
+    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbkd/webpack-starter.git"
+  },
+  "keywords": [],
+  "author": "webkid.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wbkd/webpack-starter/issues"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.4.0",
+    "jsrsasign": "^8.0.12"
+  }
+}
