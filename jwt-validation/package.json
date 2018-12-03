@@ -1,20 +1,26 @@
 {
-  "name": "webpack-starter",
+  "name": "edge-engine-jwt-validation",
   "version": "1.0.0",
-  "description": "A light foundation for your next frontend project based on webpack.",
+  "description": "An example EdgeEngine script that will perform JWT validation of requests",
   "scripts": {
     "build": "webpack -p --progress --colors",
     "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wbkd/webpack-starter.git"
+    "url": "git+https://github.com/stackpath/edgeengine-examples.git"
   },
-  "keywords": [],
-  "author": "webkid.io",
+  "keywords": [
+    "serverless",
+    "jwt",
+    "validation",
+    "edge-engine",
+    "stackpath"
+  ],
+  "author": "stackpath.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wbkd/webpack-starter/issues"
+    "url": "https://github.com/stackpath/edgeengine-examples/issues"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
