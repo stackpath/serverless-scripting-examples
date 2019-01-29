@@ -16,8 +16,7 @@ client.
 
 ### Install Dependencies
 
-This project uses [yarn](https://yarnpkg.com/) to manage dependencies and execute build s
-cripts, please install `yarn`  before continuing. Once `yarn` has been installed and after
+This project uses [yarn](https://yarnpkg.com/) to manage dependencies and execute build scripts, please install `yarn` before continuing. Once `yarn` has been installed and after
 you have cloned the repository, you can install the dependencies by executing the following
 command.
 
