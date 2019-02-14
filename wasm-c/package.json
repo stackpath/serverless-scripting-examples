@@ -1,0 +1,20 @@
+{
+  "name": "wasm-c",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:wasm": "rm -rf build && mkdir build && emcc -O3 -s WASM=1 -s BINARYEN_ASYNC_COMPILATION=0 -s MODULARIZE=1 -s EXPORT_ES6=1 ./C/fib.c -o build/fib.js",
+    "build:js": "webpack index.js",
+    "build": "yarn build:wasm && yarn build:js"
+  },
+  "dependencies": {
+    "wasm-loader": "^1.3.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "devDependencies": {
+    "arraybuffer-loader": "^1.0.7"
+  }
+}

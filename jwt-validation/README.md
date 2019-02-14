@@ -38,13 +38,3 @@ $ JWKS_URL="https://example.com/.well-known/jwks.json" JWKS_KID="$KID" yarn buil
 ```
 
 Once the build has completed, your script will be located in `build/bundle.js`.
-
-### Uploading the script
-
-Once you have built your script, log in to the
-[StackPath Portal](https://control.stackpath.com/) and navigate to the **EdgeEngine** tab
-within your CDN site.
-
-First, create a new script using `*` as the **Path** option, this will force the script to be
-called on every request to your CDN site. Next, copy the script contents from `build/bundle.js`
-and paste them into the editor within the control panel.

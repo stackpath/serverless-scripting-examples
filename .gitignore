@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+.env
+
+# Errors
+npm-debug.log
+yarn-error.log
+.yarnclean
+.vscode
+
+# Misc
+.DS_Store

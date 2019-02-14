@@ -1,0 +1,23 @@
+{
+  "name": "wasm-assemlby-script",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild": "yarn asbuild:untouched && yarn asbuild:optimized",
+    "build:js": "webpack index.js",
+    "build": "yarn asbuild && yarn build:js"
+  },
+  "dependencies": {
+    "wasm-loader": "^1.3.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "devDependencies": {
+    "arraybuffer-loader": "^1.0.7",
+    "assemblyscript": "github:AssemblyScript/assemblyscript"
+  }
+}
