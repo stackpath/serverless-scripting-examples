@@ -37,15 +37,15 @@ int fib(int n)
 
 ### Build WASM
 
-In order to access this function in our javascript script, we need to compile it to a `.wasm` file. [Emscripten](https://emscripten.org/docs/getting_started/downloads.html) performs this compilation step. Assuming it has been installed correctly, run
+In order to access this function in our JavaScript script, we need to compile it to a `.wasm` file. [Emscripten](https://emscripten.org/docs/getting_started/downloads.html) performs this compilation step. Assuming it has been installed correctly, run
 
 ```bash
 yarn build:wasm
 ```
 
-which outputs `build/fib.js` and `build/fib.wasm`. The javascript file contains code to make initializaing the [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance) easier and additional glue code.
+which outputs `build/fib.js` and `build/fib.wasm`. The JavaScript file contains code to make initializaing the [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance) easier and additional glue code.
 
-### Importing wasm
+### Importing WASM
 
 Our script imports the WASM file using [arraybuffer-loader](https://github.com/pine/arraybuffer-loader), setup in our [webpack.config.js](./webpack.config.js). Our script looks like this:
 
@@ -65,7 +65,7 @@ async function handleRequest() {
 }
 ```
 
-The wasm file is loaded into an ArrayBuffer and is passed to the WasmModule that the build Emscripten js file exports. By including the wasm file contents in the script, it prevents having to fetch it separately, as would be typical in a browser setting. Our instance allows us to call our original function defined in C, prefixed with an underscore.
+The WASM file is loaded into an ArrayBuffer and is passed to the WasmModule that the build Emscripten js file exports. By including the WASM file contents in the script, it prevents having to fetch it separately, as would be typical in a browser setting. Our instance allows us to call our original function defined in C, prefixed with an underscore.
 
 ### Build js
 

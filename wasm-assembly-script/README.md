@@ -30,9 +30,9 @@ export function fib(n: i32): i32 {
 }
 ```
 
-### Build wasm
+### Build WASM
 
-In order to access this function in our javascript script, we need to compile it to a `.wasm` file. To compile the AssemblyScript, run
+In order to access this function in our JavaScript script, we need to compile it to a `.wasm` file. To compile the AssemblyScript, run
 
 ```bash
 yarn asbuild
@@ -40,7 +40,7 @@ yarn asbuild
 
 which outputs an `optimized.wasm` file in the `build/` directory.
 
-### Importing wasm
+### Importing WASM
 
 Our script imports the WASM file using [arraybuffer-loader](https://github.com/pine/arraybuffer-loader), setup in our [webpack.config.js](./webpack.config.js). Our script looks like this:
 
@@ -62,7 +62,7 @@ async function handleRequest() {
 }
 ```
 
-The wasm file is loaded into an ArrayBuffer, used to create a [WebAssembly.Module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module), which is used to create a [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance). With the instance, we are able to call our function defined in AssemblyScript.
+The WASM file is loaded into an ArrayBuffer, used to create a [WebAssembly.Module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module), which is used to create a [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance). With the instance, we are able to call our function defined in AssemblyScript.
 
 ### Build js
 
