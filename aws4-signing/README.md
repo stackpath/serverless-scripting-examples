@@ -31,13 +31,3 @@ REQUEST_PATH="/edgeengine-test-bucket/pool.jpg"
 ```
 
 Copy its contents to a `.env` file and fill in the values specific to your s3 instance. [See instructions](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) for obtaining `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY_ID`.
-
-### Uploading the script
-
-Once you have built your script, log in to the
-[StackPath Portal](https://control.stackpath.com/) and navigate to the **EdgeEngine** tab
-within your CDN site.
-
-First, create a new script using `*` as the **Path** option, this will force the script to be
-called on every request to your CDN site. Next, copy the script contents from `build/bundle.js`
-and paste them into the editor within the control panel.
