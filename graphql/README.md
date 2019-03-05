@@ -16,6 +16,8 @@ type SunData {
 
 `hello` returns a static String while `sun` requests the [sunrise-sunset api](https://sunrise-sunset.org/api) to return the sunrise and sunset time for a particular day and place. The ideal use case for running GraphQL at the edge would involve caching API responses in the CDN so that requests would not need to travel back to the origin every time.
 
+Note: The sunrise sunset API is a public third-party API. StackPath makes no guarantees to its uptime or availability.
+
 ## Getting Started
 
 ### Install Dependencies
@@ -34,9 +36,9 @@ To build the project, run
 yarn build
 ```
 
-The output dist/main.js can be run from the EdgeEngine.
+The output `dist/main.js` can be run from the EdgeEngine.
 
-### Example curl
+### Curl Example
 
 ```bash
 curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ hello, sun(lat: 36.7201600, long: -4.4203400, date: \"today\") { sunrise, sunset } }" }' <script-url>

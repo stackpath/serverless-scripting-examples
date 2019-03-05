@@ -1,5 +1,6 @@
 import { graphql, buildSchema } from "graphql";
 
+// Define GraphQL schema
 const schema = buildSchema(`
 type Query {
   hello: String
@@ -12,6 +13,7 @@ type SunData {
 }
 `);
 
+// Define resolvers for schema
 const root = {
   hello: () => {
     return "Hello world!";
@@ -31,13 +33,17 @@ addEventListener("fetch", event => {
 });
 
 async function handleRequest(request) {
+  // Get graphql query from request
   const reqJson = await request.json();
-
   if (!reqJson.query) {
     return new Response("Query missing", { status: 400 });
   }
 
+  // Run graphql query
   const response = await graphql(schema, reqJson.query, root);
 
-  return new Response(JSON.stringify(response));
+  // Return graphql response
+  return new Response(JSON.stringify(response), {
+    "Content-Type": "application/json"
+  });
 }

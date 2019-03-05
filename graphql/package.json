@@ -1,5 +1,6 @@
 {
   "name": "edge-engine-graphql",
+  "private": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
