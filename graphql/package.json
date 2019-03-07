@@ -1,0 +1,16 @@
+{
+  "name": "edge-engine-graphql",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "graphql": "^14.1.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
