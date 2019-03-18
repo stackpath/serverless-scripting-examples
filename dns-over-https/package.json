@@ -1,0 +1,25 @@
+{
+  "name": "dns-over-https",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode=development -w",
+    "build": "webpack --mode=production",
+    "genlocalcert": "mkcert -cert-file local.pem -key-file local-key.pem localhost 127.0.0.1 ::1",
+    "httpsworker": "go build https-worker.go && https-worker"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "@dollarshaveclub/cloudworker": "0.0.11",
+    "@types/node": "^11.11.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "dns-packet": "^5.2.0"
+  }
+}
