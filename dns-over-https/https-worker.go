@@ -1,3 +1,6 @@
+// This executable runs a local "cloudworker" on port 3000 and an HTTPS proxy to
+// it on port 3001 using local.pem and local-key.pem as the certificate and
+// private key.
 package main
 
 import (
@@ -35,7 +38,7 @@ func run() error {
 	_, filename, _, _ := runtime.Caller(0)
 	localDir := filepath.Dir(filename)
 	cert, key := filepath.Join(localDir, "local.pem"), filepath.Join(localDir, "local-key.pem")
-	// Startup the https proxy on 3001
+	// Start the https proxy on 3001
 	errCh := make(chan error, 1)
 	go func() {
 		errCh <- http.ListenAndServeTLS(":3001", cert, key, http.HandlerFunc(handleReq))

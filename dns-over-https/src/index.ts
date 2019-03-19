@@ -17,7 +17,7 @@ async function handleRequest(request: Request): Promise<Response> {
     const url = new URL(request.url)
 
     // If the request is a POST to /dns-query on our host, it's a DNS request.
-    // If this is a HTTP request on our new TLD, handle that. Otherwise, it is
+    // If this is an HTTP request on our new TLD, handle that. Otherwise, it is
     // not handled by this worker.
     const dnsQuery = request.method === 'POST' && url.pathname === '/dns-query'
     let response: Response
