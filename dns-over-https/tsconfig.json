@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "dom.iterable", "es2015", "webworker"],
+    "sourceMap": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
