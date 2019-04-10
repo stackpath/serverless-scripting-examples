@@ -4,6 +4,9 @@ This is an example of an [EdgeEngine](https://www.stackpath.com/products/edgeeng
 [DNS over HTTPS (DoH)](https://en.wikipedia.org/wiki/DNS_over_HTTPS) requests. It delegates all calls to the Google DNS
 over HTTPS server for all requests except for `.stackpath` which it will use another site's IPs for.
 
+This is the accompanying code for the blog post
+[Serverless DNS over HTTPS (DoH) at the Edge](https://blog.stackpath.com/serverless-dns-over-https-at-the-edge-doh).
+
 ### Running Locally
 
 Prereqs:
