@@ -1,14 +1,14 @@
-# Contributing to edgeengine-examples
+# Contributing to serverless-scripting-examples
 
-If you're reading this, it seems likely you're interested in contributing to 
-the EdgeEngine examples. Thanks a lot! We think that's awesome! Below are some 
-guidelines to help you get started along with some expectations and tips to make 
-the process easier.
+If you're reading this, it seems likely you're interested in contributing to our 
+serverless scripting examples. Thanks a lot! We think that's awesome! Below are 
+some guidelines to help you get started along with some expectations and tips to 
+make the process easier.
 
 Bug reports and pull requests (PRs) are welcome.
 
 Before coding any new features or substantial changes, please 
-[open a feature request](https://github.com/stackpath/edgeengine-examples/issues/new) 
+[open a feature request](https://github.com/stackpath/serverless-scripting-examples/issues/new) 
 to discuss the proposed changes and benefits provided to the project.
 
 PRs comprised of whitespace fixes, code formatting changes, or other purely 
@@ -20,8 +20,8 @@ cosmetic changes are unlikely to be merged.
 email [security@stackpath.com](mailto:security@stackpath.com).
 
 Before opening an issue, ensure the bug hasn't 
-[already been reported](https://github.com/stackpath/edgeengine-examples/issues). 
-If not, [open a new bug report](https://github.com/stackpath/edgeengine-examples/issues/new) 
+[already been reported](https://github.com/stackpath/serverless-scripting-examples/issues). 
+If not, [open a new bug report](https://github.com/stackpath/serverless-scripting-examples/issues/new) 
 with details demonstrating the unexpected behavior.
 
 PRs are welcome if you've written a patch for a bug.

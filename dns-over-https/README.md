@@ -1,8 +1,9 @@
 # DNS over HTTPS
 
-This is an example of an [EdgeEngine](https://www.stackpath.com/products/edgeengine/) worker that responds to
-[DNS over HTTPS (DoH)](https://en.wikipedia.org/wiki/DNS_over_HTTPS) requests. It delegates all calls to the Google DNS
-over HTTPS server for all requests except for `.stackpath` which it will use another site's IPs for.
+This is an example of a [serverless scripting](https://www.stackpath.com/products/edge-computing/serverless-scripting/) 
+worker that responds to [DNS over HTTPS (DoH)](https://en.wikipedia.org/wiki/DNS_over_HTTPS) 
+requests. It delegates all calls to the Google DNS over HTTPS server for all 
+requests except for `.stackpath` which it will use another site's IPs for.
 
 This is the accompanying code for the blog post
 [Serverless DNS over HTTPS (DoH) at the Edge](https://blog.stackpath.com/serverless-dns-over-https-at-the-edge-doh).
@@ -42,13 +43,13 @@ Firefox [Trusted Recursive Resolver (TRR)](https://wiki.mozilla.org/Trusted_Recu
 
 Now go do `about:networking` and do a `DNS Lookup` for `mywebsite.stackpath`. You should see local IPs.
 
-### Deploy on EdgeEngine
+### Deploy on StackPath's EdgeEngine
 
 Change `proxyDnsTo` in `src/index.ts` to given CDN domain (e.g. `a1b2c3d4.stackpathcdn.com`) and set `logs` to `false`.
 Then compile:
 
     npm run build
 
-Take `dist/index.js` and upload an EdgeEngine script in the [StackPath portal](https://control.stackpath.com/). Also in
+Take `dist/index.js` and upload a serverless script in the [StackPath portal](https://control.stackpath.com/). Also in
 the portal, add `Delivery Domain` for `mywebsite.stackpath`. Then set the Firefox `network.trr.uri` setting to the CDN
 name and should work.

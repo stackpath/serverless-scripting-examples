@@ -1,14 +1,14 @@
 {
   "name": "edge-engine-jwt-validation",
   "version": "1.0.0",
-  "description": "An example EdgeEngine script that will perform JWT validation of requests",
+  "description": "An example StackPath serverless script that will perform JWT validation of requests",
   "scripts": {
     "build": "webpack -p --progress --colors",
     "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackpath/edgeengine-examples.git"
+    "url": "git+https://github.com/stackpath/serverless-scripting-examples.git"
   },
   "keywords": [
     "serverless",
@@ -17,11 +17,12 @@
     "edge-engine",
     "stackpath"
   ],
-  "author": "stackpath.com",
+  "author": "StackPath, LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stackpath/edgeengine-examples/issues"
+    "url": "https://github.com/stackpath/serverless-scripting-examples/issues"
   },
+  "private": true,
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
     "eslint": "^5.3.0",

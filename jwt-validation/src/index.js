@@ -12,7 +12,7 @@ const jwtValidator = new TokenValidator(jwksURL, kid);
 // Create the handler for our requests and inject the JWT validator we built
 const handleRequest = buildRequestHandler(jwtValidator);
 
-// Register the request handler with the EdgeEngine
+// Register the request handler with StackPath's serverless scripting platform
 //
 // eslint-disable-next-line no-restricted-globals
 addEventListener('fetch', (event) => {
