@@ -1,24 +1,29 @@
 # C WebAssembly
 
-This script demonstrates how to use C code compiled to [WebAssembly](https://webassembly.org/) within a script.
+This script demonstrates how to use C code compiled to [WebAssembly](https://webassembly.org/) 
+within a script.
 
 ## Getting Started
 
 ### Install Dependencies
 
-- [Install yarn](https://yarnpkg.com/en/docs/install) if it is not already installed and run it from the root of the `wasm-c` directory
+- [Install yarn](https://yarnpkg.com/en/docs/install) if it is not already 
+installed and run it from the root of the `wasm-c` directory
 
 ```bash
 yarn
 ```
 
-- Follow instructions for installing [Emscripten](https://emscripten.org/docs/getting_started/downloads.html)
+- Follow the instructions for installing [Emscripten](https://emscripten.org/docs/getting_started/downloads.html)
 
 ### C
 
-In our C [file](./C/fib.c), we define a function `fib` that returns the nth fibonnaci number. `EMSCRIPTEN_KEEPALIVE` informs Emscripten that we want to keep this function in our build even though nothing is calling it.
+In our [C file](./C/fib.c), we define a function `fib()` that returns the _nth_ 
+[Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number). `EMSCRIPTEN_KEEPALIVE` 
+informs Emscripten that we want to keep this function in our build even though 
+nothing is calling it.
 
-```C
+```c
 #include <emscripten.h>
 
 EMSCRIPTEN_KEEPALIVE
@@ -37,17 +42,23 @@ int fib(int n)
 
 ### Build WASM
 
-In order to access this function in our JavaScript script, we need to compile it to a `.wasm` file. [Emscripten](https://emscripten.org/docs/getting_started/downloads.html) performs this compilation step. Assuming it has been installed correctly, run
+In order to access this function in our JavaScript script, we need to compile it 
+to a `.wasm` file. [Emscripten](https://emscripten.org/) performs this 
+compilation step. Assuming it has been installed correctly, run
 
 ```bash
 yarn build:wasm
 ```
 
-which outputs `build/fib.js` and `build/fib.wasm`. The JavaScript file contains code to make initializaing the [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance) easier and additional glue code.
+which outputs `build/fib.js` and `build/fib.wasm`. The JavaScript file contains 
+code to make initializing the [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance) 
+easier and additional glue code.
 
 ### Importing WASM
 
-Our script imports the WASM file using [arraybuffer-loader](https://github.com/pine/arraybuffer-loader), setup in our [webpack.config.js](./webpack.config.js). Our script looks like this:
+Our script imports the WASM file using [arraybuffer-loader](https://github.com/pine/arraybuffer-loader), 
+setup in our [webpack.config.js](./webpack.config.js). Our script looks like 
+this:
 
 ```js
 import wasmBinary from "./build/fib.wasm";
@@ -65,7 +76,11 @@ async function handleRequest() {
 }
 ```
 
-The WASM file is loaded into an ArrayBuffer and is passed to the WasmModule that the build Emscripten js file exports. By including the WASM file contents in the script, it prevents having to fetch it separately, as would be typical in a browser setting. Our instance allows us to call our original function defined in C, prefixed with an underscore.
+The WASM file is loaded into an ArrayBuffer and is passed to the WasmModule that 
+the build Emscripten js file exports. By including the WASM file contents in the 
+script, it prevents having to fetch it separately, as would be typical in a 
+browser setting. Our instance allows us to call our original function defined in 
+C, prefixed with an underscore.
 
 ### Build js
 

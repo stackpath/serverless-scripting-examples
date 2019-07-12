@@ -9,7 +9,7 @@ assignees: ''
 
 **Before continuing**  
 Please make sure your feature request does not contain any sensitive information 
-about you, your ogranization, or your StackPath service.
+about you, your organization, or your StackPath service.
 
 **Is this a feature request for your StackPath service?**  
 If so, please fill out the [feedback form](https://control.stackpath.com/feedback/) 

@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a bug report to help us improve EdgeEngine examples
+about: Create a bug report to help us improve our serverless scripting examples
 title: ''
 labels: ''
 assignees: ''
