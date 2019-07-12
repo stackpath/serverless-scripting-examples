@@ -43,7 +43,7 @@ Firefox [Trusted Recursive Resolver (TRR)](https://wiki.mozilla.org/Trusted_Recu
 
 Now go do `about:networking` and do a `DNS Lookup` for `mywebsite.stackpath`. You should see local IPs.
 
-### Deploy on StackPath's EdgeEngine
+### Deploy on StackPath's Serverless Scripting Platform
 
 Change `proxyDnsTo` in `src/index.ts` to given CDN domain (e.g. `a1b2c3d4.stackpathcdn.com`) and set `logs` to `false`.
 Then compile:
