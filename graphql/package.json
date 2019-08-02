@@ -1,5 +1,5 @@
 {
-  "name": "edge-engine-graphql",
+  "name": "serverless-scripting-graphql",
   "private": true,
   "main": "index.js",
   "license": "MIT",

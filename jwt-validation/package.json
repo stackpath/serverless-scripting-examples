@@ -1,5 +1,5 @@
 {
-  "name": "edge-engine-jwt-validation",
+  "name": "serverless-scripting-jwt-validation",
   "version": "1.0.0",
   "description": "An example StackPath serverless script that will perform JWT validation of requests",
   "scripts": {

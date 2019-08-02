@@ -42,7 +42,7 @@ To build the project, run
 yarn build
 ```
 
-The output `dist/main.js` can be run from StackPath's EdgeEngine.
+The output `dist/main.js` can be run from StackPath's serverless scripting platform.
 
 ### Curl Example
 
