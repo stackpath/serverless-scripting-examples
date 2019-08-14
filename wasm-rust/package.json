@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "webpack -w --mode=development",
+    "build": "webpack --mode=production",
+    "cloudworker": "cloudworker -r dist/index.js"
+  },
+  "devDependencies": {
+    "@dollarshaveclub/cloudworker": "^0.1.1",
+    "@wasm-tool/wasm-pack-plugin": "^1.0.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}

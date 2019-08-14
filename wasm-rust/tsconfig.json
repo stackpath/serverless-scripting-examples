@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "module": "esNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["es2015", "webworker"],
+    "sourceMap": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
