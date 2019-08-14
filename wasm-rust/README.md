@@ -1,15 +1,17 @@
 # Rust WebAssembly
 
-This example demonstrates how to use Rust with WebAssembly to leverage a Rust library inside Serverless Scripting.
-Specifically, this example uses [image-rs](https://github.com/image-rs/image) to dynamically resize an image.
+This example demonstrates how to use [Rust](https://www.rust-lang.org/) with [WebAssembly](https://webassembly.org/) to
+leverage a Rust library inside Serverless Scripting. Specifically, this example uses
+[image-rs](https://github.com/image-rs/image) to dynamically resize an image.
 
 Features:
 
-* TypeScript
-* webpack with wasm-pack plugin
+* [TypeScript](http://www.typescriptlang.org/)
+* [webpack](https://webpack.js.org/) with [wasm-pack](https://rustwasm.github.io/wasm-pack/) plugin
 * Custom webpack loader to embed WASM
 * Rust image library support
-* Rust future integration with JS promises using wasm-bindgen-futures
+* Rust future integration with JS promises using
+  [wasm-bindgen-futures](https://github.com/rustwasm/wasm-bindgen/tree/master/crates/future)
 
 The resulting script accepts an image `url` query parameter and given a `w` parameter, an optional `h` parameter
 (defaults to `w` value), and an optional `exact` parameter to ignore aspect ratio, the image is loaded and resized
@@ -21,7 +23,7 @@ take these ideas and tailor them to their specific use cases.
 ## Usage
 
 To build the bundled JS file, latest versions of [Rust](https://www.rust-lang.org/) and [Nodejs](https://nodejs.org/)
-must be installed. Then, install of the Nodejs modules:
+must be installed. Then, install the Nodejs modules:
 
     npm install
 
