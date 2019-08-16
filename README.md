@@ -1,6 +1,6 @@
 # StackPath Serverless Scripting Examples
 
-[Serverless Scripting](https://www.stackpath.com/products/edge-computing/serverless-script) 
+[Serverless Scripting](https://www.stackpath.com/products/edge-computing/serverless-scripting/) 
 provides the ability to write custom JavaScript code that is executed at the 
 edge of the StackPath CDN. With serverless scripting you can intercept the 
 request before it is sent to your origin server or delivered from StackPath's 
