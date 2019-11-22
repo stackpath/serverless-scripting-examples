@@ -65,17 +65,18 @@ async function handleRequest(request) {
     // and codec variants.
     const variants = parseM3u8(originalPlaylist);
 
-    // Decide how to sort the playlist based on the device's capabilities.
-    const sortConfig = decisionTree(deviceInformation.result.attributes);
+    // Decide how to generate the new playlist based on the device's
+    // capabilities.
+    const config = buildModificationConfig(deviceInformation.result.attributes);
 
     // Sort the playlist by according to the parsed device information.
-    const newPlaylist = writeSortedManifest(variants, sortConfig);
+    const newPlaylist = buildNewPlaylist(variants, config);
 
     // Return the modified playlist.
     //
     // Base the new response on the response from the origin, using the newly
     // sorted playlist and a Content-Length header based on the new playlist.
-    originResponse.headers.set("Content-Length", newPlaylist.length.toString());
+    originResponse.headers.set('Content-Length', newPlaylist.length.toString());
 
     return new Response(newPlaylist, {
       status: originResponse.status,
@@ -114,15 +115,18 @@ function parseM3u8(body) {
   return qualities;
 }
 
-function decisionTree(deviceData) {
-  /* Logic deciding on ordering and capping of available qualities */
-  /* Returns config object to the spec of the output function above */
-
+/**
+ * Determine how to modify an m3u8 playlist based on device data.
+ *
+ * @param {Object} deviceData
+ * @returns {{capAtResolution: boolean, qualityPriority: number, resolution: number}}
+ */
+function buildModificationConfig(deviceData) {
   // Assume 1280x720 resolution for desktop devices. Note that OpenDDR returns
   // all data as strings.
-  if (deviceData.is_desktop === "true") {
+  if (deviceData.is_desktop === 'true') {
     return {
-      qualityPriority: HIGHEST_WITHIN_RESOLUTION,
+      qualityPriority: HIGHEST_FIRST,
       capAtResolution: false,
       resolution: 1280,
     };
@@ -132,8 +136,8 @@ function decisionTree(deviceData) {
 
   // Default to lower quality videos for older mobile devices.
   if (
-    (deviceData.device_os === "iOS" && parseInt(deviceData.device_os_version) < 7)
-    || (deviceData.device_os === "Android" && parseInt(deviceData.device_os_version) < 6)
+    (deviceData.device_os === 'iOS' && parseInt(deviceData.device_os_version) < 7)
+    || (deviceData.device_os === 'Android' && parseInt(deviceData.device_os_version) < 6)
     || (deviceData['release-year'] < 2012)
   ) {
     return {
@@ -143,7 +147,8 @@ function decisionTree(deviceData) {
     };
   }
 
-  //
+  // Otherwise, the device is a high quality mobile device. Go for the highest
+  // resolution possible while conserving bandwidth.
   return {
     qualityPriority: HIGHEST_WITHIN_RESOLUTION,
     capAtResolution: false,
@@ -159,7 +164,7 @@ function decisionTree(deviceData) {
  * @param {Object} config
  * @returns {String}
  */
-function writeSortedManifest(qualities, config) {
+function buildNewPlaylist(qualities, config) {
   // Remove qualities with a resolution higher than the device's resolution.
   if (config.capAtResolution) {
     const newQualities = qualities.filter(
@@ -233,7 +238,7 @@ function writeSortedManifest(qualities, config) {
 #EXT-X-VERSION:3
 ${qualities.map(
   q => {
-    const codec = q.codec ? `,${q.codec}` : "";
+    const codec = q.codec ? `,${q.codec}` : '';
     return `#EXT-X-STREAM-INF:BANDWIDTH=${q.bitrate},RESOLUTION=${q.resolution}${codec}\n${q.playlist}\n`;
   }
 )}`.trim();
