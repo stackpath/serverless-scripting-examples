@@ -1,6 +1,6 @@
 # Initialize an HLS Video Stream
 
-_This example is explained in much more detail on the [StackPath blog](https://blog.stackpath.com/)._
+_This example is explained in much more detail on the [StackPath blog](https://blog.stackpath.com/optimize-hls-bitrate/)._
 
 The [HTTP Live Streaming (HLS)](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) 
 protocol changes a video stream's quality on-the-fly to provide the best fit of 
