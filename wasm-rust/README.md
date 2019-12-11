@@ -2,7 +2,7 @@
 
 This example demonstrates how to use [Rust](https://www.rust-lang.org/) with [WebAssembly](https://webassembly.org/) to
 leverage a Rust library inside Serverless Scripting. Specifically, this example uses
-[image-rs](https://github.com/image-rs/image) to dynamically resize an image.
+[image-rs](https://github.com/image-rs/image) to dynamically resize an image. This is the example code to accompany [this blog post](https://blog.stackpath.com/image-manipulation/)
 
 Features:
 
