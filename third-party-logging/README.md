@@ -45,3 +45,7 @@ See `batched-logging.js` for details.
 * [Serverless scripting sandbox](https://sandbox.edgeengine.io/) scripts do NOT
   persist between requests. This means when you attempt to test batched logging
   in our sandbox, you will not get expected results.
+* The code examples provide sample authorization headers when sending logs to a
+  3rd party logging service. You will want to review the logging service's API
+  documentation to see what headers are available and how you may need to
+  authenticate.

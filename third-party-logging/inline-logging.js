@@ -1,5 +1,5 @@
 // 3rd party logging url
-const LOG_URL = "https://logging.service.com/ingest";
+const LOG_URL = "https://example.com/ingest";
 
 // 3rd party basic authentication
 const BASIC_AUTH_SECRET = "YOUR AUTH SECRET";
@@ -60,6 +60,8 @@ function getLogRecord(request, response, requestTimeMs) {
 /**
  * Send the logs off to the 3rd party logger.
  *
+ * Check the 3rd party logger's API documentation to see available headers.
+ *
  * @param {array} records The collection of log records
  * @return {Promise}
  */
@@ -75,6 +77,7 @@ async function saveLogs(records) {
       headers
     });
   } catch (e) {
+    // Handle errors per your needs
     console.error(e);
   }
 }
