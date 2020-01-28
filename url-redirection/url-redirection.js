@@ -72,11 +72,13 @@ async function handleRequest(request) {
     }
 
     // Otherwise, redirect the user to the new URL.
-    const response = new Response();
-    response.status = 301;
-    response.statusText = 'Moved Permanently';
-    response.headers.set('Location', `${redirectHost}/${redirectTo}`);
-    return response;
+    return new Response(null, {
+      status: 301,
+      statusText: "Moved Permanently",
+      headers: {
+        Location: `${redirectHost}/${redirectTo}`
+      }
+    });
   } catch (e) {
     return new Response(e.stack || e, { status: 500 });
   }
