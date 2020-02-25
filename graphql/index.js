@@ -1,4 +1,4 @@
-import { graphql, buildSchema } from "graphql";
+import { graphql, buildSchema } from 'graphql';
 
 // Define GraphQL schema
 const schema = buildSchema(`
@@ -15,28 +15,22 @@ type SunData {
 
 // Define resolvers for schema
 const root = {
-  hello: () => {
-    return "Hello world!";
-  },
-  sun: async args => {
+  hello: () => 'Hello world!',
+  sun: async (args) => {
     const { lat, long, date } = args;
     const resp = await fetch(
-      `https://api.sunrise-sunset.org/json?lat=${lat}0&lng=${long}&date=${date}`
+      `https://api.sunrise-sunset.org/json?lat=${lat}0&lng=${long}&date=${date}`,
     );
     const json = await resp.json();
     return json.results;
-  }
+  },
 };
-
-addEventListener("fetch", event => {
-  event.respondWith(handleRequest(event.request));
-});
 
 async function handleRequest(request) {
   // Get graphql query from request
   const reqJson = await request.json();
   if (!reqJson.query) {
-    return new Response("Query missing", { status: 400 });
+    return new Response('Query missing', { status: 400 });
   }
 
   // Run graphql query
@@ -44,6 +38,10 @@ async function handleRequest(request) {
 
   // Return graphql response
   return new Response(JSON.stringify(response), {
-    "Content-Type": "application/json"
+    'Content-Type': 'application/json',
   });
 }
+
+addEventListener('fetch', (event) => {
+  event.respondWith(handleRequest(event.request));
+});

@@ -42,10 +42,6 @@ const redirects = new Map([
   ['/en/api/stacks/', 'reference/stacks'],
 ]);
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
-});
-
 /**
  * Redirect requests from developer.stackpath.com to stackpath.dev.
  *
@@ -74,12 +70,16 @@ async function handleRequest(request) {
     // Otherwise, redirect the user to the new URL.
     return new Response(null, {
       status: 301,
-      statusText: "Moved Permanently",
+      statusText: 'Moved Permanently',
       headers: {
-        Location: `${redirectHost}/${redirectTo}`
-      }
+        Location: `${redirectHost}/${redirectTo}`,
+      },
     });
   } catch (e) {
     return new Response(e.stack || e, { status: 500 });
   }
 }
+
+addEventListener('fetch', (event) => {
+  event.respondWith(handleRequest(event.request));
+});
