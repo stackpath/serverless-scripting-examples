@@ -7,6 +7,21 @@ make the process easier.
 
 Bug reports and pull requests (PRs) are welcome.
 
+We expect users to see these examples and modify them to suit their needs on 
+their serverless scripting sites. The examples in this project should reflect 
+the capabilities of StackPath's serverless scripting platform and put 
+StackPath's best face forward. To reflect that, new examples should:
+
+* Illustrate an interesting or novel way to manipulate the client's incoming 
+  request and/or the outgoing response
+* Have consistent and correct internal documentation and code comments
+* Conform to the platforms's best practices and code standards. JavaScript files 
+  should conform to the [Airbnb JavaScript code style](https://github.com/airbnb/javascript) 
+  standard. 
+* Include a `README.md` file that has a description of the example, build and 
+  installation instructions, and usage instructions or samples as needed. 
+* Build without errors and work correctly when run as a serverless script
+
 Before coding any new features or substantial changes, please 
 [open a feature request](https://github.com/stackpath/serverless-scripting-examples/issues/new) 
 to discuss the proposed changes and benefits provided to the project.
