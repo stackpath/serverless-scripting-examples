@@ -1,11 +1,11 @@
-const Dotenv = require("dotenv-webpack");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: "./index.js",
-  mode: "production",
-  target: "webworker",
+  entry: './index.js',
+  mode: 'production',
+  target: 'webworker',
   plugins: [new Dotenv()],
   optimization: {
-    minimize: true
-  }
+    minimize: true,
+  },
 };
