@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "arraybuffer-loader": "^1.0.7",
-    "assemblyscript": "github:AssemblyScript/assemblyscript"
+    "assemblyscript": "^0.9.4",
+    "typescript": "^3.8.3"
   }
 }

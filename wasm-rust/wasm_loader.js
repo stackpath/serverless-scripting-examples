@@ -16,7 +16,7 @@ module.exports = function (source) {
     importMap[mport.module].push(mport);
   });
   let importCode = '';
-  for (const modName in Object.keys(importMap)) {
+  Object.keys(importMap).forEach(modName => {
     let parts = '';
     importMap[modName].forEach((mport) => {
       if (parts) parts += ',';
@@ -25,7 +25,7 @@ module.exports = function (source) {
     });
     if (importCode) importCode += ',';
     importCode += `\n  '${modName}': {${parts}\n  }`;
-  }
+  });
   code += `const wasmImports = {${importCode}\n}\n`;
   code += 'const wasmInst = new WebAssembly.Instance(wasmMod, wasmImports)\n';
   code += 'module.exports = wasmInst.exports\n';
