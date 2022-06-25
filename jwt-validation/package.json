@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "jsonwebtoken": "^8.4.0",
-    "jsrsasign": "^10.2.0"
+    "jsrsasign": "^10.5.25"
   }
 }
