@@ -34,7 +34,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "jsrsasign": "^10.2.0"
   }
 }
